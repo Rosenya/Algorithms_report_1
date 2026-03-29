@@ -8,6 +8,9 @@
 
 #include <iostream>
 #include <algorithm>
+/* #include <algorithm> użyłam dla std::copy. Wg polecenia tablica miała być kopiowana dla każdego sortowania. Uważam, że możnaby dodać pętlę for
+żeby nie powtarzać tego samego kodu, ale zostawiłam tak, ponieważ widziałam, że to byłaby praca na pointerach i nie chciałam się w to zagłębiać,
+a tak jest czytelniej. Cały kod wydzieliłam do osobnej funkcji runTest ze względu na czytelność.*/
 
 using namespace std;
 using namespace sort;
@@ -56,12 +59,12 @@ void runTest(int size,
     long long t6 = mergeSort.mergeSortWithTimer(arr6, size);
 
     cout << "\n=== " << size << " elementów ===\n";
-    cout << "BubbleSort: " << t1 << " us\n";
-    cout << "CocktailSort: " << t2 << " us\n";
-    cout << "SelectionSort: " << t3 << " us\n";
-    cout << "InsertionSort: " << t4 << " us\n";
-    cout << "ShellSort: " << t5 << " us\n";
-    cout << "MergeSort: " << t6 << " us\n";
+    cout << "BubbleSort: " << t1 << " milisekund\n";
+    cout << "CocktailSort: " << t2 << " milisekund\n";
+    cout << "SelectionSort: " << t3 << " milisekund\n";
+    cout << "InsertionSort: " << t4 << " milisekund\n";
+    cout << "ShellSort: " << t5 << " milisekund\n";
+    cout << "MergeSort: " << t6 << " milisekund\n";
 
     delete[] base;
     delete[] arr1;
