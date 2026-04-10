@@ -4,33 +4,40 @@
 using namespace std;
 
 namespace sort {
-    Timer t;
     long long CocktailSort::cocktailSort(int tab[], int size) {
+    Timer t;
+
     bool zamiana = true;
+    int start = 0;
+    int end = size - 1;
 
     while (zamiana) {
         zamiana = false;
 
-        // Przesuwamy w prawo
-        for (int i = 0; i < size-1; i++) {
+        // Przejście w prawo
+        for (int i = start; i < end; i++) {
             if (tab[i] > tab[i + 1]) {
-                swap(tab[i], tab[i + 1]);
+                std::swap(tab[i], tab[i + 1]);
                 zamiana = true;
             }
         }
 
         if (!zamiana) break;
+        end--;
 
         zamiana = false;
 
-        // Przesuwamy w lewo
-        for (int i = size - 1 - 1; i >= 0; i--) {
+        // Przejście w lewo
+        for (int i = end - 1; i >= start; i--) {
             if (tab[i] > tab[i + 1]) {
-                swap(tab[i], tab[i + 1]);
+                std::swap(tab[i], tab[i + 1]);
                 zamiana = true;
             }
         }
+
+        start++;
     }
+
     return t.elapsedMilliseconds();
 }
 }
