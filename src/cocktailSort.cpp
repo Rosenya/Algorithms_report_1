@@ -5,7 +5,8 @@ using namespace std;
 
 namespace sort {
     long long CocktailSort::cocktailSort(int tab[], int size) {
-    Timer t;
+    
+        Timer t;
 
     bool zamiana = true;
     int start = 0;

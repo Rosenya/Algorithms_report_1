@@ -13,3 +13,5 @@ long long Timer::elapsedMilliseconds() const {
     auto stop = high_resolution_clock::now();
     return duration_cast<milliseconds>(stop - start).count();
 }
+
+
